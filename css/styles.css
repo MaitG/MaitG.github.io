@@ -11587,14 +11587,22 @@ html {
   max-height: 40rem;
   max-width: 40rem;
 }
+
 .profile .profile-img {
-  height: 80vw;
-  max-height: 45rem;
+  height: 40vh;
+  max-height:20rem;
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
+
+.circle-img {
+  border-radius: 50%;
+  border: 0.25rem solid #fff; 
+  
+}
+
 .profile .dots-1 {
   position: absolute;
   width: 3vw;
