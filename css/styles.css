@@ -11578,7 +11578,7 @@ html {
   font-size: 1.5rem;
 }
 
-.profile {
+/* .profile {
   position: relative;
   height: 75vw;
   width: 75vw;
@@ -11601,7 +11601,54 @@ html {
   border-radius: 50%;
   border: 0.25rem solid #fff; 
   
+} */
+
+
+.profile {
+  position: relative;
+  height: 75vw;
+  width: 75vw;
+  border-radius: 5vw;
+  margin-top: 5vw;
+  max-height: 40rem;
+  max-width: 40rem;
+  perspective: 1000px; /* Enable 3D perspective for the flip */
 }
+
+/* Common image styles with transition and 3D settings */
+.profile .profile-img {
+  height: 40vh;
+  max-height: 20rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  backface-visibility: hidden; /* Hide the backside when flipped */
+}
+
+
+/* The second image is the back; rotate it so it's hidden initially */
+.profile .profile-img:nth-child(2) {
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+/* On hover, flip the images */
+.profile:hover .profile-img:nth-child(1) {
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+.profile:hover .profile-img:nth-child(2) {
+  transform: translate(-50%, -50%) rotateY(0deg);
+}
+
+/* Existing circle style remains unchanged */
+.circle-img {
+  border-radius: 50%;
+  border: 0.25rem solid #fff; 
+}
+
 
 .profile .dots-1 {
   position: absolute;
