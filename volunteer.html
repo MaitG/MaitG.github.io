@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer Work</title>
+    <link rel="icon" type="image/x-icon" href="assets/programmer.png" />
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <h1>Maitri's Personal Website</h1>
     </header>
-    <nav>
-        <a href="index.html">Introduction</a>
-        <a href="education.html">Education</a>
-        <a href="work.html">Work</a>
-        <a href="publications.html">Publications</a>
-        <a href="volunteer.html">Volunteer Work</a>
-        <a href="interests.html">Interests</a>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bolder text-gradient" href="index.html">Maitri Gada</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <main>
         <h2>Volunteer Work</h2>
@@ -27,8 +39,21 @@
         </ul>
         <!-- Add more volunteer experiences -->
     </main>
-    <footer>
-        <p>&copy; 2024 Maitri</p>
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0">Copyright &copy; Maitri Gada 2024</div></div>
+                <div class="col-auto">
+                    <a class="small" href="#">Privacy</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#">Terms</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
