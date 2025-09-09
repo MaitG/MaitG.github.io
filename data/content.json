@@ -1,0 +1,188 @@
+{
+    "site": {
+      "name": "Maitri Gada",
+      "email": "mbgada@cs.cmu.edu",
+      "location": "Pittsburgh, PA",
+      "hero_headline": "I build reliable AI & SWE systems that ship.",
+      "hero_subheadline": "Knowledge-graph RAG, canary A/B infra, and multimodal ML — with an obsession for readability, testability, and speed.",
+      "cta_projects_href": "projects.html",
+      "cta_resume_href": "assets/Maitri_Gada_Resume.pdf",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/maitrigada",
+        "github": "https://github.com/MaitG"
+      },
+      "seo": {
+        "default_description": "Portfolio of Maitri Gada — AI/SWE generalist: RAG systems, experimentation infra, multimodal ML.",
+        "pages": {
+          "index.html": "AI engineer and SWE generalist who ships user-facing systems with measurable impact.",
+          "projects.html": "Selected work: RAG, canary testing for recommender systems, Fiddler Guardrails, Mini-LLaMA, and more.",
+          "resume.html": "Experience, projects, and achievements of Maitri Gada.",
+          "education.html": "CMU MSAII — coursework, degrees, and academic highlights.",
+          "work.html": "Work history and impact in AI & software engineering.",
+          "contact.html": "Contact Maitri — email and links."
+        }
+      }
+    },
+  
+    "projects": [
+      {
+        "title": "Vet Copilot — Knowledge-Graph RAG for Prescription Review",
+        "summary": "Built a Neptune-backed entity graph and retrieval pipelines, then wired LLM reasoning to cut cognitive load for Rx checks. Added caching & guards for latency and safety.",
+        "stack": ["Python", "LangChain", "OpenAI", "Amazon Neptune", "AWS Lambda"],
+        "impact": "Review time ↓ ~45% in internal demo flows; hallucination checks via rule-based guardrails.",
+        "cover_image": "assets/projects/vet-copilot.jpg",
+        "links": {
+          "github": "https://github.com/maitg/vet-copilot-demo",
+          "demo": "#",
+          "post": "#"
+        },
+        "featured": true,
+        "details": "Problem → scattered Rx policies. **Solution:** KG-first RAG (entities: drug, species, diagnosis) + retrieval templates; added prompt-level guardrails and caching."
+      },
+      {
+        "title": "Movie Recs — Canary A/B Infra with 10% Traffic",
+        "summary": "Production-style dual-model routing (main vs canary), structured logging, ETL, and evaluator to compute RMSE/MAE per model with Welch’s t-test for promotion decisions.",
+        "stack": ["FastAPI", "Kafka", "PostgreSQL", "MLflow", "Python"],
+        "impact": "De-risked releases; repeatable evaluation with clear uplifts.",
+        "cover_image": "assets/projects/movie-recs.jpg",
+        "links": {
+          "github": "https://github.com/maitribg/hit-or-flop",
+          "demo": "#",
+          "post": "#"
+        },
+        "featured": true
+      },
+      {
+        "title": "Fiddler Guardrails for Alt-Text Safety",
+        "summary": "Moderated Azure CV alt-text and user captions before display using Fiddler `ftl-safety` with a trigger-warning UX.",
+        "stack": ["Python", "Fiddler", "Azure Computer Vision", "Flask"],
+        "impact": "Flagged unsafe/misleading captions; smoother trust & safety review.",
+        "cover_image": "assets/projects/alt-text-guardrails.jpg",
+        "links": { "github": "#", "demo": "#", "post": "#" }
+      },
+      {
+        "title": "Cadence — Smart Collar ML (Multimodal Dog Wellness)",
+        "summary": "Fused IMU + audio to detect stress/fatigue; transformer sequence models and CNN-based sound classifiers.",
+        "stack": ["PyTorch", "Transformers", "Signal Processing"],
+        "impact": "Early signals of stress events; foundation for owner & vet insights.",
+        "cover_image": "assets/projects/cadence.jpg",
+        "links": { "github": "#", "demo": "#"}
+      },
+      {
+        "title": "Mini-LLaMA (11-711) — Compact LLM Implementation",
+        "summary": "Implemented attention, RoPE, optimizations; used for generation and zero-/fine-tuned classification tasks.",
+        "stack": ["PyTorch", "NLP"],
+        "impact": "Lean training loop; 40% faster processing vs baseline in class setting.",
+        "cover_image": "assets/projects/mini-llama.jpg",
+        "links": { "github": "#", "post": "#" }
+      },
+      {
+        "title": "RAG for CMU & Pittsburgh Q&A",
+        "summary": "Scraped domain data, annotated Q/A, evaluated variants (Mistral-7B best with concise prompt tuning).",
+        "stack": ["Python", "Mistral-7B", "RAG"],
+        "impact": "Best hit rate with short, concrete answers.",
+        "cover_image": "assets/projects/cmu-rag.jpg",
+        "links": { "github": "#", "demo": "#" }
+      },
+      {
+        "title": "ContextLegalBias — Reproduction & Debugging",
+        "summary": "Reproduced LCD/GAP results on BEC-Cri/Pro; investigated divergences in μ_female/μ_male/Δ scoring.",
+        "stack": ["Python", "Hugging Face", "Evaluation"],
+        "impact": "Pinpointed metric mismatches; documented reproducible pipeline.",
+        "cover_image": "assets/projects/context-legal-bias.jpg",
+        "links": { "github": "#", "post": "#" }
+      },
+      {
+        "title": "ASR Trainer & Progressive Curriculum",
+        "summary": "Decoder-only transformer with CE+CTC, progressive layer unfreezing, mixed precision, beam search, attention logging.",
+        "stack": ["PyTorch", "ASR"],
+        "impact": "Modular trainer used across labs; clear ablation hooks.",
+        "cover_image": "assets/projects/asr-trainer.jpg",
+        "links": { "github": "#", "post": "#" }
+      }
+    ],
+  
+    "work": [
+      {
+        "company": "Chewy (Summer Internship)",
+        "role": "AI Innovator Intern",
+        "dates": "May 2025 – Aug 2025",
+        "location": "Boston, MA",
+        "bullets": [
+          "Built knowledge-graph RAG prototype (Neptune + LangChain) for Rx review; added latency caching and guardrails.",
+          "Partnered with PM/Vets to encode policies as entities and relationship edges.",
+          "Delivered internal demo with measurable review-time reduction."
+        ]
+      },
+      {
+        "company": "Syven Global Services",
+        "role": "Software Engineer (Regenerative Farming App)",
+        "dates": "2022 – 2023",
+        "location": "Remote/India",
+        "bullets": [
+          "Shipped farmer companion app with task tracking and personalized recs.",
+          "Cut fertilizer/pesticide use by ~35% and improved labor productivity by ~20%.",
+          "Owned data model, analytics, and feature rollout cadence."
+        ]
+      },
+      {
+        "company": "Tata Consultancy Services (Internship)",
+        "role": "Software Intern — GUI & OCR solutions",
+        "dates": "2021",
+        "location": "India",
+        "bullets": [
+          "Implemented OCR flows and desktop GUI utilities for internal users.",
+          "Automated repetitive checks; reduced manual QA effort."
+        ]
+      },
+      {
+        "company": "Asit C. Mehta Investment Intermediates (Internship)",
+        "role": "Technology & Software Intern",
+        "dates": "Mar 2021 – May 2021",
+        "location": "Mumbai, India",
+        "bullets": [
+          "Authored product roadmap for a fractional investment platform.",
+          "Supported early GTM research and feature prioritization."
+        ]
+      }
+    ],
+  
+    "education": {
+      "degrees": [
+        {
+          "school": "Carnegie Mellon University",
+          "program": "MS in Artificial Intelligence & Innovation (MSAII)",
+          "dates": "Aug 2024 – May 2026 (expected)",
+          "notes": "QPA: 4.0 (first term); focus on GenAI, RecSys, RAG, and ML Systems."
+        },
+        {
+          "school": "University of Mumbai",
+          "program": "BE in Computer Science",
+          "dates": "2017 – 2021",
+          "notes": "GPA: 9.1/10"
+        }
+      ],
+      "courses": {
+        "current": [
+          "Advanced NLP (11-711)",
+          "Generative AI",
+          "Deep Reinforcement Learning",
+          "ML with Graphs",
+          "Intro to Deep Learning",
+          "ML in Production",
+          "AI Venture Studio",
+          "AI Commercialization",
+          "Computer Systems",
+          "Computers & Tech Law"
+        ],
+        "planned": [
+          "Large Language Models (11-667)",
+          "Deep RL & Control (10-703)",
+          "Machine Learning with Graphs (advanced)",
+          "GenAI (10-623) advanced topics",
+          "Independent Study/Capstone: RAG + KG at scale"
+        ]
+      }
+    }
+  }
+  
