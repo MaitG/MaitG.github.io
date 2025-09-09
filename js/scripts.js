@@ -13,6 +13,8 @@
     }
 
     function updateButton({ buttonEl, isDark }) {
+        if (!buttonEl) return; // Guard against null button
+        
         const newCta = isDark ? "Change to light theme" : "Change to dark theme";
         const newIcon = isDark ? "bi-sun" : "bi-moon-stars";
         
@@ -24,24 +26,39 @@
         document.querySelector("html").setAttribute("data-theme", theme);
     }
 
-    const button = document.querySelector("[data-theme-toggle]");
-    const localStorageTheme = localStorage.getItem("theme");
-    const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+    function initializeThemeToggle() {
+        const button = document.querySelector("[data-theme-toggle]");
+        const localStorageTheme = localStorage.getItem("theme");
+        const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-    let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+        let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
 
-    updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
-    updateThemeOnHtmlEl({ theme: currentThemeSetting });
+        // Apply theme immediately
+        updateThemeOnHtmlEl({ theme: currentThemeSetting });
+        
+        // Update button if it exists
+        updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
 
-    button.addEventListener("click", () => {
-        const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+        // Add click listener if button exists
+        if (button) {
+            button.addEventListener("click", () => {
+                const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
-        localStorage.setItem("theme", newTheme);
-        updateButton({ buttonEl: button, isDark: newTheme === "dark" });
-        updateThemeOnHtmlEl({ theme: newTheme });
+                localStorage.setItem("theme", newTheme);
+                updateButton({ buttonEl: button, isDark: newTheme === "dark" });
+                updateThemeOnHtmlEl({ theme: newTheme });
 
-        currentThemeSetting = newTheme;
-    });
+                currentThemeSetting = newTheme;
+            });
+        }
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeThemeToggle);
+    } else {
+        initializeThemeToggle();
+    }
 })();
 
 // Contact form functionality
